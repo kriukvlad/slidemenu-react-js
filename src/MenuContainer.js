@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import MenuButton from "./MenuButton";
 
 class MenuContainer extends Component {
     
@@ -9,8 +10,16 @@ class MenuContainer extends Component {
             visible: false
         };
 
+        this.handleMouseDown = this.handleMouseDown.bind(this);
         this.toggleMenu = this.toggleMenu.bind(this);
-    }
+    };
+
+    handleMouseDown(e) {
+        this.toggleMenu();
+
+        console.log("Clicked!");
+        e.stopPropagation();
+    };
 
     toggleMenu() {
         this.setState({
@@ -20,6 +29,7 @@ class MenuContainer extends Component {
     
     render() {
         return (
+            <MenuButton handleMouseDown={this.handleMouseDown}/>,
             <div>
                 <div>
                     <p>Can you find the item that is superfluous here</p>
