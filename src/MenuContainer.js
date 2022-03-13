@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import MenuButton from "./MenuButton";
+import Menu from "./Menu";
 
 class MenuContainer extends Component {
-    
+
     constructor(props) {
         super(props);
 
@@ -26,11 +27,14 @@ class MenuContainer extends Component {
             visible: !this.state.visible
         });
     };
-    
+
     render() {
         return (
-            <MenuButton handleMouseDown={this.handleMouseDown}/>,
             <div>
+                <MenuButton handleMouseDown={this.handleMouseDown} />
+                <Menu handleMouseDown={this.handleMouseDown}
+                    menuVisibility={this.state.visible} />
+
                 <div>
                     <p>Can you find the item that is superfluous here</p>
                     <ul>
@@ -44,8 +48,8 @@ class MenuContainer extends Component {
                     </ul>
                 </div>
             </div>
-        )
-    }
-}
+        );
+    };
+};
 
 export default MenuContainer;
