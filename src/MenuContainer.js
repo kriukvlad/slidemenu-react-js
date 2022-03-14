@@ -34,7 +34,6 @@ class MenuContainer extends Component {
                 <MenuButton handleMouseDown={this.handleMouseDown} />
                 <Menu handleMouseDown={this.handleMouseDown}
                     menuVisibility={this.state.visible} />
-
                 <div>
                     <p>Can you find the item that is superfluous here</p>
                     <ul>
